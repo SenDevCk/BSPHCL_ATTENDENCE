@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AttendenceApp" parent="Theme.Material3.DynamicColors.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="Theme.AttendenceApp" parent="Base.Theme.AttendenceApp" />
+</resources>
