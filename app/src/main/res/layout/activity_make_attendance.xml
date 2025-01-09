@@ -83,6 +83,7 @@
             android:text="Rajiv nagar ,Patna,bihar,800024"/>
     </LinearLayout>
     <Button
+        android:id="@+id/btn_make_attendence"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"

@@ -24,28 +24,26 @@ public class CommonPref {
 	}
 
 
-	public static void setUserDetails(Context context, User UserInfo2) {
+	public static void setUserDetails(Context context, User UserInfo2,String token) {
 
 		String key = "_USER_DETAILS";
 
 		SharedPreferences prefs = context.getSharedPreferences(key,
 				Context.MODE_PRIVATE);
 		Editor editor = prefs.edit();
-		editor.putString("MessageString", UserInfo2.getUserName());
-		editor.putString("UserID", UserInfo2.getUserID());
-		editor.putString("UserName", UserInfo2.getUserName());
-		editor.putString("SubDiv", UserInfo2.getSubDiv());
-		editor.putString("SubdivName", UserInfo2.getSubdivName());
-		editor.putString("WalletId", UserInfo2.getWalletId());
-		editor.putString("WalletAmount", UserInfo2.getWalletAmount());
-		editor.putBoolean("Authenticated", UserInfo2.getAuthenticated());
-		editor.putString("ImeiNo", UserInfo2.getImeiNo());
-		editor.putString("ContactNo", UserInfo2.getContactNo());
-		editor.putString("IFSCCode", UserInfo2.getIFSCCode());
-		editor.putString("SerialNo", UserInfo2.getSerialNo());
-		//editor.putString("Password", Utiilties.encryption(UserInfo2.getPassword()));
-		editor.putString("Password", UserInfo2.getPassword());
-		editor.putString("ACCT_NO", UserInfo2.getACCT_NO());
+		//editor.putString("MessageString", UserInfo2.getUserName());
+		editor.putString("staffId", UserInfo2.getStaffId());
+		editor.putString("staffName", UserInfo2.getStaffName());
+		editor.putString("mobileNo", UserInfo2.getMobileNo());
+		editor.putString("emailId", UserInfo2.getEmailId());
+		editor.putString("authenticate", UserInfo2.getAuthenticate());
+		editor.putString("latitude", UserInfo2.getLatitude());
+		editor.putBoolean("longitude", UserInfo2.getLongitude());
+		editor.putString("entryDate", UserInfo2.getAEntryDate());
+		editor.putString("imageUrl", UserInfo2.getImageUrl());
+		editor.putString("role", UserInfo2.getRole());
+		editor.putString("locationId", UserInfo2.getLocationId());
+		editor.putString("token", token);
 		editor.commit();
 	}
 	public static User getUserDetails(Context context) {
@@ -53,21 +51,21 @@ public class CommonPref {
 		User UserInfo2 = new User();
 		SharedPreferences prefs = context.getSharedPreferences(key,
 				Context.MODE_PRIVATE);
-		UserInfo2.setMessageString(prefs.getString("MessageString", ""));
-		UserInfo2.setUserID(prefs.getString("UserID", ""));
-		UserInfo2.setUserName(prefs.getString("UserName", ""));
-		UserInfo2.setSubDiv(prefs.getString("SubDiv", ""));
-		UserInfo2.setSubdivName(prefs.getString("SubdivName", ""));
-		UserInfo2.setWalletId(prefs.getString("WalletId", ""));
-		UserInfo2.setWalletAmount(prefs.getString("WalletAmount", ""));
-		UserInfo2.setAuthenticated(prefs.getBoolean("Authenticated", false));
-		UserInfo2.setImeiNo(prefs.getString("ImeiNo", ""));
-		UserInfo2.setContactNo(prefs.getString("ContactNo", ""));
-		UserInfo2.setIFSCCode(prefs.getString("IFSCCode", ""));
-		UserInfo2.setSerialNo(prefs.getString("SerialNo", ""));
+		//UserInfo2.setMessageString(prefs.getString("MessageString", ""));
+		UserInfo2.setStaffId(prefs.getString("staffId", ""));
+		UserInfo2.setStaffName(prefs.getString("staffId", ""));
+		UserInfo2.setMobileNo(prefs.getString("mobileNo", ""));
+		UserInfo2.setEmailId(prefs.getString("emailId", ""));
+		UserInfo2.setAuthenticate(prefs.getString("authenticate", ""));
+		UserInfo2.setLatitude(prefs.getString("latitude", ""));
+		UserInfo2.setlongitude(prefs.getString("longitude", ""));
+		UserInfo2.setEntryDate(prefs.getString("entryDate", ""));
+		UserInfo2.setImageUrl(prefs.getString("imageUrl", ""));
+		UserInfo2.setRole(prefs.getString("role", ""));
+		UserInfo2.setLocationId(prefs.getString("locationId", ""));
 		//UserInfo2.setPassword(Utiilties.decryption(prefs.getString("Password", "")));
-		UserInfo2.setPassword(prefs.getString("Password", ""));
-		UserInfo2.setACCT_NO(prefs.getString("ACCT_NO", ""));
+		UserInfo2.setToken(prefs.getString("token", ""));
+		//UserInfo2.setACCT_NO(prefs.getString("ACCT_NO", ""));
 		return UserInfo2;
 	}
 	public static void logout(Context context) {

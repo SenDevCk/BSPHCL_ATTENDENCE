@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 intent2.putExtra("lang",longitude1);
                                 intent2.putExtra("gps_time",gps_time1);
                                 intent2.putExtra("image",imageData1);
+                                intent2.putExtra("in_out","I");
                                 intent2.putExtra("key_pic",data.getIntExtra("KEY_PIC", 0));
                                 break;
                             case 2:
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 intent2.putExtra("lng",longitude2);
                                 intent2.putExtra("gps_time",gps_time2);
                                 intent2.putExtra("image",imageData2);
+                                intent2.putExtra("in_out","O");
                                 intent2.putExtra("key_pic",data.getIntExtra("KEY_PIC", 0));
                                 break;
                             default:
