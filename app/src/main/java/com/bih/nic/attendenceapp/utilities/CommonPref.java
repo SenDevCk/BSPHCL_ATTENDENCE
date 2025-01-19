@@ -24,7 +24,7 @@ public class CommonPref {
 	}
 
 
-	public static void setUserDetails(Context context, User UserInfo2,String token) {
+	public static void setUserDetails(Context context, User userInfo2,String token) {
 
 		String key = "_USER_DETAILS";
 
@@ -32,17 +32,17 @@ public class CommonPref {
 				Context.MODE_PRIVATE);
 		Editor editor = prefs.edit();
 		//editor.putString("MessageString", UserInfo2.getUserName());
-		editor.putString("staffId", UserInfo2.getStaffId());
-		editor.putString("staffName", UserInfo2.getStaffName());
-		editor.putString("mobileNo", UserInfo2.getMobileNo());
-		editor.putString("emailId", UserInfo2.getEmailId());
-		editor.putString("authenticate", UserInfo2.getAuthenticate());
-		editor.putString("latitude", UserInfo2.getLatitude());
-		editor.putBoolean("longitude", UserInfo2.getLongitude());
-		editor.putString("entryDate", UserInfo2.getAEntryDate());
-		editor.putString("imageUrl", UserInfo2.getImageUrl());
-		editor.putString("role", UserInfo2.getRole());
-		editor.putString("locationId", UserInfo2.getLocationId());
+		editor.putString("staffId", userInfo2.getStaffId());
+		editor.putString("staffName", userInfo2.getStaffName());
+		editor.putString("mobileNo", userInfo2.getMobileNo());
+		editor.putString("emailId", userInfo2.getEmailId());
+		editor.putString("authenticate", userInfo2.getAuthenticate());
+		editor.putString("latitude", userInfo2.getLatitude());
+		editor.putString("longitude", userInfo2.getLongitude());
+		editor.putString("entryDate", userInfo2.getEntryDate());
+		editor.putString("imageUrl", userInfo2.getImageUrl());
+		editor.putString("role", userInfo2.getRole());
+		editor.putString("locationId", userInfo2.getLocationId());
 		editor.putString("token", token);
 		editor.commit();
 	}
@@ -53,18 +53,17 @@ public class CommonPref {
 				Context.MODE_PRIVATE);
 		//UserInfo2.setMessageString(prefs.getString("MessageString", ""));
 		UserInfo2.setStaffId(prefs.getString("staffId", ""));
-		UserInfo2.setStaffName(prefs.getString("staffId", ""));
+		UserInfo2.setStaffName(prefs.getString("staffName", ""));
 		UserInfo2.setMobileNo(prefs.getString("mobileNo", ""));
 		UserInfo2.setEmailId(prefs.getString("emailId", ""));
 		UserInfo2.setAuthenticate(prefs.getString("authenticate", ""));
 		UserInfo2.setLatitude(prefs.getString("latitude", ""));
-		UserInfo2.setlongitude(prefs.getString("longitude", ""));
+		UserInfo2.setLongitude(prefs.getString("longitude", ""));
 		UserInfo2.setEntryDate(prefs.getString("entryDate", ""));
 		UserInfo2.setImageUrl(prefs.getString("imageUrl", ""));
 		UserInfo2.setRole(prefs.getString("role", ""));
 		UserInfo2.setLocationId(prefs.getString("locationId", ""));
 		//UserInfo2.setPassword(Utiilties.decryption(prefs.getString("Password", "")));
-		UserInfo2.setToken(prefs.getString("token", ""));
 		//UserInfo2.setACCT_NO(prefs.getString("ACCT_NO", ""));
 		return UserInfo2;
 	}
@@ -92,103 +91,12 @@ public class CommonPref {
 		editor.commit();
 	}
 
-	public static void setCheckUpdate(Context context, long dateTime) {
+		public static String getToken(Activity activity) {
 
-		String key = "_CheckUpdate";
-
-		SharedPreferences prefs = context.getSharedPreferences(key,
-				Context.MODE_PRIVATE);
-
-		Editor editor = prefs.edit();
-
-		dateTime = dateTime + 1 * 3600000;
-		editor.putLong("LastVisitedDate", dateTime);
-
-		editor.commit();
-
-	}
-	public static void setPrinterMacAddress(Context context, String address) {
-
-		String key = "_MAC_ADDRESS";
-
-		SharedPreferences prefs = context.getSharedPreferences(key,
-				Context.MODE_PRIVATE);
-
-		Editor editor = prefs.edit();
-
-		editor.putString("MacAddress", address);
-		editor.commit();
-
-	}
-
-	public static String getPrinterMacAddress(Context context) {
-		String key = "_MAC_ADDRESS";
-		SharedPreferences prefs = context.getSharedPreferences(key,
-				Context.MODE_PRIVATE);
-		String macAddress = prefs.getString("MacAddress", "");
-		return macAddress;
-	}
-
-	public static void setPrinterType(Context context, String address) {
-
-		String key = "P_Type";
-
-		SharedPreferences prefs = context.getSharedPreferences(key,
-				Context.MODE_PRIVATE);
-
-		Editor editor = prefs.edit();
-
-		editor.putString("PType", address);
-		editor.commit();
-
-	}
-
-	public static String getPrinterType(Context context) {
-
-		String key = "P_Type";
-
-		SharedPreferences prefs = context.getSharedPreferences(key,
-				Context.MODE_PRIVATE);
-
-		String Ptype = prefs.getString("PType", "");
-		return Ptype;
-	}
-
-	public static void setCurrentDateForSync(Activity activity,String dateToStr) {
-		String key = "CurrentDateS";
+		String key = "_USER_DETAILS";
 
 		SharedPreferences prefs = activity.getSharedPreferences(key,
 				Context.MODE_PRIVATE);
-		Editor editor = prefs.edit();
-		editor.putString("date", dateToStr);
-		editor.commit();
-	}
-
-	public static String getCurrentDateForSync(Activity activity) {
-
-		String key = "CurrentDateS";
-
-		SharedPreferences prefs = activity.getSharedPreferences(key,
-				Context.MODE_PRIVATE);
-		return prefs.getString("date", "");
-	}
-
-    public static void setCurrentDate(Activity activity,String dateToStr) {
-		String key = "CurrentDate";
-
-		SharedPreferences prefs = activity.getSharedPreferences(key,
-				Context.MODE_PRIVATE);
-		Editor editor = prefs.edit();
-		editor.putString("date", dateToStr);
-		editor.commit();
-    }
-
-	public static String getCurrentDate(Activity activity) {
-
-		String key = "CurrentDate";
-
-		SharedPreferences prefs = activity.getSharedPreferences(key,
-				Context.MODE_PRIVATE);
-		return prefs.getString("date", "");
+		return prefs.getString("token", "");
 	}
 }

@@ -62,19 +62,23 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/text_username"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:paddingLeft="10dp"
                             android:text="Chandan Singh"
+                            android:singleLine="true"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/text_role"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
+                            android:singleLine="true"
                             android:text="designation"
                             android:textColor="@android:color/darker_gray" />
                     </LinearLayout>
@@ -92,20 +96,24 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/text_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginRight="5dp"
+                            android:singleLine="true"
                             android:text="10/12/1988"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/text_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginRight="5dp"
+                            android:singleLine="true"
                             android:text="10:30:00"
                             android:textColor="@android:color/darker_gray" />
                     </LinearLayout>
@@ -175,5 +183,12 @@
             android:layout_marginTop="10dp"
             android:background="@android:color/darker_gray"/>
     </LinearLayout>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="Service provided by NIC,Bihar"/>
 </RelativeLayout>

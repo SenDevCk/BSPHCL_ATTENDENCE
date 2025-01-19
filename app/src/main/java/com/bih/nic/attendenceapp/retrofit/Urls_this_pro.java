@@ -7,9 +7,9 @@ package com.bih.nic.attendenceapp.retrofit;
 public class Urls_this_pro {
 
     //production
-    public static final String RETROFIT_BASE_URL = "http://energypayment.bsphcl.co.in/ewallet/";
+    //public static final String RETROFIT_BASE_URL = "http://energypayment.bsphcl.co.in/ewallet/";
     //staging testing environment
-    //public static final String RETROFIT_BASE_URL = "http://192.168.139.61/ewallet/";
+    public static final String RETROFIT_BASE_URL = "http://192.168.29.204:8085/api/";
 
     public static final String RETROFIT_BASE_URL2= "http://125.16.220.29:8010/secureV05/";
 

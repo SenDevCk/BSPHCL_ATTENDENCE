@@ -19,6 +19,10 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void startMyActivity() {
-        new Handler().postAtTime(() -> startActivity(new Intent(SplashActivity.this,LoginActivity.class)),5000);
+        Intent intent=new Intent(SplashActivity.this,LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        new Handler().postAtTime(() -> startActivity(intent),5000);
     }
 }

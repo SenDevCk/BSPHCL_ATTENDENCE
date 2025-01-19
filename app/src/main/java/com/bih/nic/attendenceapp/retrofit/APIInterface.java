@@ -18,10 +18,10 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface APIInterface {
-    @POST("/auth/login")
+    @POST("/api/auth/login")
     Call<LoginResponse> doLogin(@Body LoginUserDto loginUserDto);
 
-    @POST("/attendence/makeAttendence")
+    @POST("/api/attendence/makeAttendence")
     Call<MyResponse> makeAttendence(@Body AttendenceRequestDto attaAttendenceRequestDto);
 
 //    @POST("/ewallet/api/nic/makePayment?")

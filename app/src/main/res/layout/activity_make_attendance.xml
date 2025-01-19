@@ -80,8 +80,17 @@
             android:textColor="@color/black"
             android:gravity="center"
             android:padding="20dp"
-            android:text="Rajiv nagar ,Patna,bihar,800024"/>
+            android:text="Rajiv nagar,Patna,bihar,800024"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_make_attendence"
+            android:gravity="center"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="100dp"
+            android:text="Service provided by @NIC,Bihar"/>
     </LinearLayout>
+
     <Button
         android:id="@+id/btn_make_attendence"
         android:layout_width="match_parent"
@@ -90,4 +99,5 @@
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimaryDark"
         android:text="Submit"/>
+
 </RelativeLayout>
